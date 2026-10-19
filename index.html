@@ -1,1 +1,518 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+  <title>ISA RUGS | Premium Carpets & Rugs</title>
+
+  <meta name="description" content="ISA RUGS - Premium carpets, rugs and flooring collection.">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      background: #faf8f3;
+      color: #222;
+    }
+
+    header {
+      background: #111;
+      color: white;
+      padding: 18px 20px;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 3px 15px rgba(0,0,0,0.2);
+    }
+
+    .header-inner {
+      max-width: 1200px;
+      margin: auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 15px;
+    }
+
+    .logo {
+      font-size: 27px;
+      font-weight: bold;
+      letter-spacing: 3px;
+      color: #d6a84f;
+    }
+
+    .tagline {
+      font-size: 11px;
+      color: #ddd;
+      letter-spacing: 1px;
+    }
+
+    .hero {
+      min-height: 500px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 70px 20px;
+      background:
+        linear-gradient(rgba(0,0,0,0.58), rgba(0,0,0,0.58)),
+        url("images/hero.jpg") center/cover;
+    }
+
+    .hero-content {
+      color: white;
+      max-width: 800px;
+    }
+
+    .hero h1 {
+      font-size: 52px;
+      letter-spacing: 5px;
+      margin-bottom: 15px;
+    }
+
+    .hero p {
+      font-size: 18px;
+      margin-bottom: 25px;
+    }
+
+    .gold {
+      color: #d6a84f;
+    }
+
+    .btn {
+      display: inline-block;
+      background: #d6a84f;
+      color: #111;
+      padding: 13px 25px;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: bold;
+      border: none;
+      cursor: pointer;
+    }
+
+    .section {
+      max-width: 1200px;
+      margin: auto;
+      padding: 45px 18px;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 25px;
+    }
+
+    .section-title h2 {
+      font-size: 32px;
+      margin-bottom: 8px;
+    }
+
+    .section-title p {
+      color: #777;
+    }
+
+    .search-box {
+      max-width: 650px;
+      margin: 0 auto 30px;
+      display: flex;
+      background: white;
+      border-radius: 30px;
+      overflow: hidden;
+      border: 1px solid #ddd;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.07);
+    }
+
+    .search-box input {
+      flex: 1;
+      padding: 15px 20px;
+      border: none;
+      outline: none;
+      font-size: 16px;
+    }
+
+    .search-box button {
+      border: none;
+      background: #111;
+      color: white;
+      padding: 0 22px;
+      cursor: pointer;
+    }
+
+    .categories {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 30px;
+    }
+
+    .category {
+      padding: 10px 18px;
+      border: 1px solid #d6a84f;
+      background: white;
+      border-radius: 25px;
+      cursor: pointer;
+    }
+
+    .category:hover,
+    .category.active {
+      background: #111;
+      color: white;
+    }
+
+    .products {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 22px;
+    }
+
+    .product {
+      background: white;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+      transition: 0.3s;
+    }
+
+    .product:hover {
+      transform: translateY(-5px);
+    }
+
+    .product-img {
+      width: 100%;
+      height: 240px;
+      object-fit: cover;
+      display: block;
+      background: #eee;
+    }
+
+    .product-info {
+      padding: 16px;
+    }
+
+    .product-info h3 {
+      margin-bottom: 8px;
+      font-size: 18px;
+    }
+
+    .category-name {
+      color: #888;
+      font-size: 13px;
+      margin-bottom: 10px;
+    }
+
+    .price {
+      font-size: 20px;
+      font-weight: bold;
+      color: #111;
+    }
+
+    .old-price {
+      color: #999;
+      text-decoration: line-through;
+      font-size: 14px;
+      margin-left: 7px;
+    }
+
+    .discount {
+      display: inline-block;
+      margin-top: 8px;
+      background: #111;
+      color: #d6a84f;
+      padding: 5px 9px;
+      border-radius: 5px;
+      font-size: 12px;
+    }
+
+    .whatsapp {
+      display: block;
+      text-align: center;
+      margin-top: 14px;
+      background: #25D366;
+      color: white;
+      padding: 11px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .about {
+      background: #111;
+      color: white;
+      text-align: center;
+    }
+
+    .about p {
+      max-width: 750px;
+      margin: auto;
+      line-height: 1.8;
+      color: #ddd;
+    }
+
+    footer {
+      background: #080808;
+      color: white;
+      text-align: center;
+      padding: 25px 15px;
+    }
+
+    footer .logo {
+      margin-bottom: 10px;
+    }
+
+    .no-result {
+      text-align: center;
+      display: none;
+      padding: 30px;
+      color: #777;
+    }
+
+    @media(max-width:600px) {
+      .hero h1 {
+        font-size: 35px;
+      }
+
+      .hero {
+        min-height: 430px;
+      }
+
+      .header-inner {
+        flex-direction: column;
+      }
+
+      .products {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+      }
+
+      .product-img {
+        height: 170px;
+      }
+
+      .product-info {
+        padding: 12px;
+      }
+
+      .product-info h3 {
+        font-size: 15px;
+      }
+
+      .price {
+        font-size: 17px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div class="header-inner">
+    <div>
+      <div class="logo">ISA RUGS</div>
+      <div class="tagline">PREMIUM CARPETS & RUGS</div>
+    </div>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="hero-content">
+    <h1>ISA <span class="gold">RUGS</span></h1>
+    <p>Premium Carpets • Rugs • Flooring</p>
+    <a href="#products" class="btn">Explore Collection</a>
+  </div>
+</section>
+
+<section class="section" id="products">
+
+  <div class="section-title">
+    <h2>Our <span class="gold">Collection</span></h2>
+    <p>Find the perfect carpet for your space</p>
+  </div>
+
+  <div class="search-box">
+    <input
+      type="text"
+      id="search"
+      placeholder="Search carpets, rugs..."
+      onkeyup="searchProducts()"
+    >
+    <button>🔍</button>
+  </div>
+
+  <div class="categories">
+    <button class="category active" onclick="filterProducts('all', this)">All</button>
+    <button class="category" onclick="filterProducts('Persian', this)">Persian</button>
+    <button class="category" onclick="filterProducts('Turkish', this)">Turkish</button>
+    <button class="category" onclick="filterProducts('Imported', this)">Imported</button>
+    <button class="category" onclick="filterProducts('Grass', this)">Grass</button>
+  </div>
+
+  <div class="products" id="productList">
+
+    <div class="product" data-category="Persian" data-name="Royal Persian Carpet">
+      <img src="images/product1.jpg" class="product-img">
+      <div class="product-info">
+        <h3>Royal Persian Carpet</h3>
+        <div class="category-name">Persian Carpet</div>
+        <span class="price">₹4,999</span>
+        <span class="old-price">₹6,999</span>
+        <div class="discount">Special Price</div>
+        <a class="whatsapp" href="https://wa.me/919999999999" target="_blank">
+          WhatsApp Enquiry
+        </a>
+      </div>
+    </div>
+
+    <div class="product" data-category="Turkish" data-name="Turkish Premium Rug">
+      <img src="images/product2.jpg" class="product-img">
+      <div class="product-info">
+        <h3>Turkish Premium Rug</h3>
+        <div class="category-name">Turkish Rug</div>
+        <span class="price">₹3,999</span>
+        <span class="old-price">₹5,499</span>
+        <div class="discount">Special Price</div>
+        <a class="whatsapp" href="https://wa.me/919999999999" target="_blank">
+          WhatsApp Enquiry
+        </a>
+      </div>
+    </div>
+
+    <div class="product" data-category="Imported" data-name="Imported Luxury Carpet">
+      <img src="images/product3.jpg" class="product-img">
+      <div class="product-info">
+        <h3>Imported Luxury Carpet</h3>
+        <div class="category-name">Imported Carpet</div>
+        <span class="price">₹5,999</span>
+        <span class="old-price">₹7,999</span>
+        <div class="discount">Special Price</div>
+        <a class="whatsapp" href="https://wa.me/919999999999" target="_blank">
+          WhatsApp Enquiry
+        </a>
+      </div>
+    </div>
+
+    <div class="product" data-category="Grass" data-name="Premium Grass Carpet">
+      <img src="images/product4.jpg" class="product-img">
+      <div class="product-info">
+        <h3>Premium Grass Carpet</h3>
+        <div class="category-name">Grass Carpet</div>
+        <span class="price">₹2,499</span>
+        <span class="old-price">₹3,499</span>
+        <div class="discount">Special Price</div>
+        <a class="whatsapp" href="https://wa.me/919999999999" target="_blank">
+          WhatsApp Enquiry
+        </a>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="no-result" id="noResult">
+    No products found.
+  </div>
+
+</section>
+
+<section class="about">
+  <div class="section">
+    <div class="section-title">
+      <h2>About <span class="gold">ISA RUGS</span></h2>
+    </div>
+
+    <p>
+      Discover premium carpets and rugs for your home, office and commercial spaces.
+      ISA RUGS brings you a beautiful collection of Persian, Turkish, Imported,
+      Grass carpets and more.
+    </p>
+  </div>
+</section>
+
+<footer>
+  <div class="logo">ISA RUGS</div>
+  <p>Premium Carpets & Rugs</p>
+  <br>
+  <p>© 2026 ISA RUGS. All Rights Reserved.</p>
+</footer>
+
+<script>
+
+function filterProducts(category, button) {
+
+  document.querySelectorAll(".category").forEach(btn => {
+    btn.classList.remove("active");
+  });
+
+  button.classList.add("active");
+
+  let products = document.querySelectorAll(".product");
+
+  products.forEach(product => {
+
+    if (category === "all" ||
+        product.dataset.category === category) {
+
+      product.style.display = "block";
+
+    } else {
+
+      product.style.display = "none";
+
+    }
+
+  });
+
+  document.getElementById("search").value = "";
+  document.getElementById("noResult").style.display = "none";
+}
+
+
+function searchProducts() {
+
+  let search = document
+    .getElementById("search")
+    .value
+    .toLowerCase();
+
+  let products = document.querySelectorAll(".product");
+
+  let found = 0;
+
+  products.forEach(product => {
+
+    let name = product.dataset.name.toLowerCase();
+
+    if (name.includes(search)) {
+
+      product.style.display = "block";
+      found++;
+
+    } else {
+
+      product.style.display = "none";
+
+    }
+
+  });
+
+  if (found === 0) {
+
+    document.getElementById("noResult").style.display = "block";
+
+  } else {
+
+    document.getElementById("noResult").style.display = "none";
+
+  }
+}
+
+</script>
+
+</body>
+  </html>
